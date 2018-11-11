@@ -1,0 +1,66 @@
+body {
+	box-shadow: inset 1px 1px 150px 32px #000;
+	/*background-position: center top;*/
+	background: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(code.png) no-repeat, #272822;
+    background-color: #272822;
+}
+
+.conatiner {
+	min-height: 100%;
+}
+
+.row {
+	padding-top: 25%;
+}
+
+.right-col {
+	text-align: center;
+	color: white;
+	/*opacity: 0.9;*/
+}
+
+.mu-string {
+	color: #a69f50;
+}
+
+.mu-key {
+	color: #479cac;
+}
+
+.mu-expr {
+	color: #7dab0d;
+}
+
+.console {
+	color: #7bab00;;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
+
+input[type=console] {
+    border: none;
+    border-radius: 0;
+    -webkit-appearance: none;
+    background: none;
+    color: white;
+    border-bottom: 1px solid;
+    width: 100%;
+    padding-left: 17px;
+}
+
+.graterThanArrow {
+	position: absolute;
+	color: white;
+}
+
+.btn-mobile {
+	width: 200px;
+  	height: 100px;
+}
+
+.mobile-container {
+	margin: 15px;
+	position: absolute;
+  	bottom: 0;
+}

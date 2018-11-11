@@ -1,0 +1,52 @@
+<html>
+	<head>
+		<title>Timofey Biryukov | Programmer</title>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+		<link rel="stylesheet" href="style.css">
+		<meta name="theme-color" content="#000000" />
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+			    <div class="col-sm"></div>
+			    <div class="col-sm"></div>
+			    <div class="col-sm right-col">
+					<h1>
+						<span class="mu-string">Hello World</span><br>
+						<span class="mu-key">I am</span><br>
+						{ <span id="dtitle" class="mu-expr">Programmer</span> }
+					</h1>
+			    </div>
+			</div>
+		</div>
+		<div class="mobile-container d-md-block d-lg-none">
+			<div class="row">
+			    <div class="col-3">
+					<button type="button" class="btn btn-outline-success btn-lg btn-mobile" onclick="updateDynamicTitle(getName())">getName();</button>			    		
+			    </div>
+			    <div class="col-3">
+					<button type="button" class="btn btn-outline-success btn-lg btn-mobile" onclick="updateDynamicTitle(getPhoneNumber())">getPhoneNumber();</button>			    		
+			    </div>
+			    <div class="col-3">
+					<button type="button" class="btn btn-outline-success btn-lg btn-mobile" onclick="updateDynamicTitle(getEmail())">getEmail();</button>
+			    </div>
+			    <div class="col-3">
+					<button type="button" class="btn btn-outline-success btn-lg btn-mobile" onclick="updateDynamicTitle(getGitHub())">getGitHub();</button>
+			    </div>
+			</div>
+		</div>
+		<div class="console d-md-none d-lg-block">
+			<div id="console-log" class="console-log"></div>
+			<div class="graterThanArrow">></div>
+			<datalist id="commandList">
+				<option value="getAll()">getAll()</option>
+				<option value="getName()">getName()</option>
+				<option value="getPhoneNumber()">getPhoneNumber()</option>
+				<option value="getEmail()">getEmail()</option>
+				<option value="getGitHub()">getGitHub()</option>
+			</datalist>
+			<input id="console-input" type="console" placeholder="type command and press [enter]" list="commandList">
+		</div>
+		<script src="script.js"></script>
+	</body>
+</html>
