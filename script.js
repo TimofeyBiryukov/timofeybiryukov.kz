@@ -26,7 +26,7 @@ document.getElementById('console-input').onchange = function(event) {
 
 document.body.onkeydown = function() {
 	document.getElementById('console-input').focus();
-}
+};
 
 function consoleLog(log) {
 	let consoleLogContainer = document.getElementById('console-log');
