@@ -1,8 +1,18 @@
 'use strict'
 
-document.getElementById('console-input').onchange = e => proccessCmd(e.target.value);
+document.getElementById('console-input').onchange = e => {
+  proccessCmd(e.target.value);
+  e.target.value = '';
+};
 
 document.body.onkeydown = () => document.getElementById('console-input').focus();
+
+
+if (location.hash) {
+  console.log(location.hash);
+  proccessCmd(location.hash);
+}
+
 
 function proccessCmd(cmd) {
 	console.log(cmd);
@@ -34,7 +44,6 @@ function proccessCmd(cmd) {
 	} else {
 		consoleLog('Command not supported');
 	}
-	event.target.value = '';
 };
 
 function consoleLog(log) {
