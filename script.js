@@ -2,22 +2,28 @@
 
 document.getElementById('console-input').onchange = function(event) {
 	console.log(event.target.value);
-	if (event.target.value.toLowerCase().indexOf('getname') > -1) {
+	if (event.target.value.toLowerCase().includes('getname')) {
 		consoleLog(getName());
 		updateDynamicTitle(getName());
-	} else if (event.target.value.toLowerCase().indexOf('getphonenumber') > -1) {
+	} else if (event.target.value.toLowerCase().includes('getphonenumber')) {
 		consoleLog(getPhoneNumber());
-	} else if (event.target.value.toLowerCase().indexOf('getemail') > -1) {
+	} else if (event.target.value.toLowerCase().includes('getemail')) {
 		consoleLog(getEmail());
-	} else if (event.target.value.toLowerCase().indexOf('getgithub') > -1) {
+	} else if (event.target.value.toLowerCase().includes('getgithub')) {
 		consoleLog(getGitHub());
-	} else if (event.target.value.toLowerCase().indexOf('getall') > -1) {
+	} else if (event.target.value.toLowerCase().includes('getall')) {
 		consoleLog(getName());
 		consoleLog(getPhoneNumber());
 		consoleLog(getEmail());
 		consoleLog(getGitHub());
-	} else if (event.target.value.toLowerCase().indexOf('clear') > -1) {
+	} else if (event.target.value.toLowerCase().includes('clear')) {
 		clearLog();
+	} else if (event.target.value.toLowerCase().includes('closebookcall')) {
+		document.getElementById('calendly').style.display = 'none';
+		document.getElementById('title-conatiner').style.display = null;
+	} else if (event.target.value.toLowerCase().includes('bookcall')) {
+		document.getElementById('calendly').style.display = null;
+		document.getElementById('title-conatiner').style.display = 'none';
 	} else {
 		consoleLog('Command not supported');
 	}

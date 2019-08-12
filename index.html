@@ -16,7 +16,9 @@
 		<meta name="theme-color" content="#000000" />
 	</head>
 	<body>
-		<div class="container">
+		<div id="calendly" class="calendly-inline-widget" data-url="https://calendly.com/timofeybiryukov/60min" style="display: none"></div>
+
+		<div class="container" id="title-conatiner">
 			<div class="row">
 			    <div class="col-sm"></div>
 			    <div class="col-sm"></div>
@@ -29,6 +31,7 @@
 			    </div>
 			</div>
 		</div>
+
 		<div class="mobile-container d-md-block d-lg-none">
 			<div class="row">
 			    <div class="col-3">
@@ -54,9 +57,12 @@
 				<option value="getPhoneNumber()">getPhoneNumber()</option>
 				<option value="getEmail()">getEmail()</option>
 				<option value="getGitHub()">getGitHub()</option>
+				<option value="bookCall()">bookCall()</option>
+				<option value="closeBookCall()">closeBookCall()</option>
 			</datalist>
 			<input id="console-input" type="console" placeholder="type command and press [enter]" list="commandList">
 		</div>
+		<script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js"></script>
 		<script src="script.js"></script>
 	</body>
 </html>
