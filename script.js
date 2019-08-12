@@ -7,11 +7,7 @@ document.getElementById('console-input').onchange = e => {
 
 document.body.onkeydown = () => document.getElementById('console-input').focus();
 
-
-if (location.hash) {
-  console.log(location.hash);
-  proccessCmd(location.hash);
-}
+if (location.hash) proccessCmd(location.hash);
 
 
 function proccessCmd(cmd) {
@@ -74,10 +70,7 @@ function clearLog() {
 
 function updateDynamicTitle(title) {
   let dtitle = document.getElementById('dtitle');
-  
-  // close calendly if it is open
   proccessCmd('closebookcall');
-
 	if (/(https?:\/\/[^\s]+)/g.test(title)) {
 		let link = document.createElement('a');
 		link.innerHTML = title;
