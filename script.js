@@ -21,9 +21,12 @@ document.getElementById('console-input').onchange = function(event) {
 	} else if (event.target.value.toLowerCase().includes('closebookcall')) {
 		document.getElementById('calendly').style.display = 'none';
 		document.getElementById('title-conatiner').style.display = null;
+		consoleLog('- closing calendly widget');
 	} else if (event.target.value.toLowerCase().includes('bookcall')) {
 		document.getElementById('calendly').style.display = null;
 		document.getElementById('title-conatiner').style.display = 'none';
+		consoleLog(' - opening calendly widget');
+		consoleLog(' - pick a time and date inside the widget');
 	} else {
 		consoleLog('Command not supported');
 	}
