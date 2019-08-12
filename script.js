@@ -1,28 +1,32 @@
 'use strict'
 
-document.getElementById('console-input').onchange = function(event) {
-	console.log(event.target.value);
-	if (event.target.value.toLowerCase().includes('getname')) {
+document.getElementById('console-input').onchange = e => proccessCmd(e.target.value);
+
+document.body.onkeydown = () => document.getElementById('console-input').focus();
+
+function proccessCmd(cmd) {
+	console.log(cmd);
+	if (cmd.toLowerCase().includes('getname')) {
 		consoleLog(getName());
 		updateDynamicTitle(getName());
-	} else if (event.target.value.toLowerCase().includes('getphonenumber')) {
+	} else if (cmd.toLowerCase().includes('getphonenumber')) {
 		consoleLog(getPhoneNumber());
-	} else if (event.target.value.toLowerCase().includes('getemail')) {
+	} else if (cmd.toLowerCase().includes('getemail')) {
 		consoleLog(getEmail());
-	} else if (event.target.value.toLowerCase().includes('getgithub')) {
+	} else if (cmd.toLowerCase().includes('getgithub')) {
 		consoleLog(getGitHub());
-	} else if (event.target.value.toLowerCase().includes('getall')) {
+	} else if (cmd.toLowerCase().includes('getall')) {
 		consoleLog(getName());
 		consoleLog(getPhoneNumber());
 		consoleLog(getEmail());
 		consoleLog(getGitHub());
-	} else if (event.target.value.toLowerCase().includes('clear')) {
+	} else if (cmd.toLowerCase().includes('clear')) {
 		clearLog();
-	} else if (event.target.value.toLowerCase().includes('closebookcall')) {
+	} else if (cmd.toLowerCase().includes('closebookcall')) {
 		document.getElementById('calendly').style.display = 'none';
 		document.getElementById('title-conatiner').style.display = null;
 		consoleLog('- closing calendly widget');
-	} else if (event.target.value.toLowerCase().includes('bookcall')) {
+	} else if (cmd.toLowerCase().includes('bookcall')) {
 		document.getElementById('calendly').style.display = null;
 		document.getElementById('title-conatiner').style.display = 'none';
 		consoleLog(' - opening calendly widget');
@@ -31,10 +35,6 @@ document.getElementById('console-input').onchange = function(event) {
 		consoleLog('Command not supported');
 	}
 	event.target.value = '';
-};
-
-document.body.onkeydown = function() {
-	document.getElementById('console-input').focus();
 };
 
 function consoleLog(log) {
@@ -64,7 +64,11 @@ function clearLog() {
 }
 
 function updateDynamicTitle(title) {
-	let dtitle = document.getElementById('dtitle')
+  let dtitle = document.getElementById('dtitle');
+  
+  // close calendly if it is open
+  proccessCmd('closebookcall');
+
 	if (/(https?:\/\/[^\s]+)/g.test(title)) {
 		let link = document.createElement('a');
 		link.innerHTML = title;

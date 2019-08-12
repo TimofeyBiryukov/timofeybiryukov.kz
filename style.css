@@ -9,7 +9,7 @@ body {
 	min-height: 100%;
 }
 
-.row {
+.row-title {
 	padding-top: 25%;
 }
 
@@ -63,4 +63,8 @@ input[type=console] {
 	margin: 15px;
 	position: absolute;
   	bottom: 0;
+}
+
+.mobile-container .row {
+	padding-top: 20px;
 }
